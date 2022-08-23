@@ -48,7 +48,14 @@ For our HTTP server we’ll use HAProxy that will listen to port 85
  #### 4) How could these dockers and stages be automate?
  Ans: Through CICD pipeline.
  #### 5) List the types of automation that could be put in place during the whole life-cycle, as well the tools that could be used to accomplish this.
- Ans: Well there are numbers of Automation tools buth the most common are
+ Ans1: Several types of automations are expected to take place during the whole life-cycle.
+  #### 1) Infrastructure Automation
+  #### 2) Configuration Management
+  #### 3) Deployment Automation
+  #### 4) Performance Management
+  #### 5) Log management
+  #### 6) Monitoring
+ Ans2: Well there are numbers of Automation tools buth the most common are
  #### 1) Jenkins
  #### 2) CircleCI
  #### 3) TeamCity
