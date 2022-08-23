@@ -38,8 +38,8 @@ For our HTTP server we’ll use HAProxy that will listen to port 85
  
  Hitting F5 will display a different hostname since HAproxy will load balance the request.
  
- Now comming towards the questions asked
- #### 1) Tell us Tell us, how could the versions be managed inside the docker?
+ Now comming towards the questions been asked
+ #### 1) Tell us, how could the versions be managed inside the docker?
  Ans: Each git tag will represent a docker tag.
  #### 2) Where could be the frontend assets be placed: inside the docker stack/version or somewhere else
  Ans: If local deployment, then inside docker and if cloud, then inside s3 instance.
