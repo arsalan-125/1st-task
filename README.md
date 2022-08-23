@@ -1,10 +1,11 @@
 # docker-stack-task
 #### Build the Docker image
-To build a docker image of our app from the docker file instructions; we’ll write the docker build command line, where our Dockerfile file is located:
+To build a docker image of our app from the docker file instructions; we’ll go to the directory where our Dockerfile file is located:
 
 ```bash
 $ cd testimony
 ```
+Then write the docker build command line,
 
 ```bash
 $ docker build -t testimony .
