@@ -3,6 +3,10 @@
 To build a docker image of our app from the docker file instructions; we’ll write the docker build command line, where our Dockerfile file is located:
 
 ```bash
+$ cd testimony
+```
+
+```bash
 $ docker build -t testimony .
 ```
 
