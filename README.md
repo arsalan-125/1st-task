@@ -55,7 +55,7 @@ For our HTTP server we’ll use HAProxy that will listen to port 85
   #### 4) Performance Management
   #### 5) Log management
   #### 6) Monitoring
- Ans2: Well there are number of Automation tools but the most common are
+ Ans2: Well there are number of Automation tools available, but the most common are
  #### 1) Jenkins
  #### 2) CircleCI
  #### 3) TeamCity
