@@ -1,0 +1,73 @@
+version: '3'
+
+services:
+  git:
+    image: git_sample_app_docker_compose:1.0
+    container_name: git_sample_app_docker_compose
+    build: .
+    command: git -C /build clone https://github.com/leebrandt/docker-compose-example.git
+    volumes:
+      - ./build:/b
+      
+services:
+  php-apache-environment:
+    container_name: php-apache
+    image: php:8.0-apache
+    volumes:
+      - ./php/src:/var/www/html/
+    ports:
+      - 8000:80
+
+services:
+  testimony:
+   image: testimony
+   ports:
+     - 8080
+   environment:
+     - SERVICE_PORTS=8080
+   deploy:
+     replicas: 20
+     update_config:
+       parallelism: 5
+       delay: 10s
+     restart_policy:
+       condition: on-failure
+       max_attempts: 3
+       window: 120s
+   networks:
+     - web
+     
+     db:
+    container_name: db
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+        MYSQL_DATABASE: MY_DATABASE
+        MYSQL_USER: MYSQL_USER
+        MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+        - "9906:3306"
+
+  proxy:
+    image: dockercloud/haproxy
+    depends_on:
+      - testimony
+    environment:
+      - BALANCE=leastconn
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 85:80
+    networks:
+      - web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+ 
+
+ web:
+    driver: overlay
+
