@@ -47,4 +47,10 @@ For our HTTP server we’ll use HAProxy that will listen to port 85
  Ans : Dev, stage and prod and a QA stage, if required.
  #### 4) How could these dockers and stages be automate?
  Ans: Through CICD pipeline.
- 
+ #### 5) List the types of automation that could be put in place during the whole life-cycle, as well the tools that could be used to accomplish this.
+ Ans: Well there are numbers of Automation tools buth the most common are
+ #### 1) Jenkins
+ #### 2) CircleCI
+ #### 3) TeamCity
+ #### 4) Bamboo
+ #### 5) GitLab
