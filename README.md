@@ -37,3 +37,14 @@ For our HTTP server we’ll use HAProxy that will listen to port 85
  Once done you browse http://localhost:85 and see the nodejs message, 
  
  Hitting F5 will display a different hostname since HAproxy will load balance the request.
+ 
+ Now comming towards the questions asked
+ # 1) Tell us Tell us, how could the versions be managed inside the docker?
+ Ans: Each git tag will represent a docker tag.
+ # 2) Where could be the frontend assets be placed: inside the docker stack/version or somewhere else
+ Ans: If local deployment, then inside docker and if cloud, then inside s3 instance.
+ # 3) How many stages should the docker and app pass before going Live?
+ Ans : Dev, stage and prod and a QA stage, if required.
+ # 4) How could these dockers and stages be automate?
+ Ans: Through CICD pipeline.
+ 
